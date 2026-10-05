@@ -1,0 +1,847 @@
+/* 1. Identidade visual: alterar estas variáveis atualiza toda a interface. */
+:root {
+  --navy: #062d44;
+  --blue: #005f94;
+  --green: #087f5b;
+  --mint: #c8f0df;
+  --ink: #153747;
+  --muted: #4d636f;
+  --paper: #f8faf8;
+  --white: #ffffff;
+  --line: #d8e2e0;
+  --serif: Georgia, 'Times New Roman', serif;
+  --sans: Arial, Helvetica, sans-serif;
+  --container: 1180px;
+}
+
+/* 2. Base: border-box evita que padding e bordas ultrapassem as larguras. */
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 1rem/1.65 var(--sans);
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+a {
+  color: inherit;
+  text-underline-offset: 0.22em;
+}
+a:hover {
+  color: var(--green);
+}
+button, input {
+  font: inherit;
+}
+h1, h2, h3, p, figure {
+  margin: 0;
+}
+h1, h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+}
+h2 {
+  font-size: clamp(2.25rem, 4vw, 3.3rem);
+  line-height: 1.12;
+}
+h3 {
+  font-size: 1.125rem;
+  line-height: 1.35;
+}
+p + p {
+  margin-top: 1rem;
+}
+section[id] {
+  scroll-margin-top: 2rem;
+}
+.container {
+  width: min(var(--container), calc(100% - 64px));
+  margin-inline: auto;
+}
+.section-space {
+  padding-block: 88px;
+}
+.eyebrow {
+  font-size: 0.72rem;
+  line-height: 1.5;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+  color: var(--green);
+}
+.section-heading {
+  margin-bottom: 40px;
+}
+.section-heading .eyebrow {
+  margin-bottom: 16px;
+}
+.section-heading > p:last-child:not(.eyebrow) {
+  margin-top: 20px;
+  color: var(--muted);
+}
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-decoration: underline;
+}
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  min-height: 50px;
+  padding: 12px 23px;
+  border-radius: 4px;
+  font-size: 0.86rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 150ms ease;
+}
+.button-primary {
+  background: var(--green);
+  color: var(--white);
+}
+.button-primary:hover {
+  background: #056445;
+  color: var(--white);
+}
+.button-light {
+  background: var(--mint);
+  color: var(--navy);
+}
+.button-light:hover {
+  background: var(--white);
+  color: var(--navy);
+}
+
+/* 3. Acessibilidade: foco visível, link de salto e texto para leitores de tela. */
+:focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: 5px;
+}
+.contact :focus-visible, .reading-banner :focus-visible {
+  outline-color: var(--mint);
+}
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -120px;
+  z-index: 10;
+  padding: 12px 18px;
+  background: var(--navy);
+  color: var(--white);
+}
+.skip-link:focus {
+  top: 12px;
+  color: var(--white);
+}
+.visually-hidden, .filter-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* 4. Cabeçalho: Flexbox permite que a navegação se reorganize no celular. */
+.site-header {
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+}
+.header-inner {
+  min-height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  text-decoration: none;
+  color: var(--navy);
+}
+.brand strong {
+  display: block;
+  font-size: 1.5rem;
+  line-height: 1.25;
+  letter-spacing: -0.045em;
+}
+.brand-caption {
+  display: block;
+  margin-top: 3px;
+  font-size: 0.59rem;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+}
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 22px;
+}
+.nav-list a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.nav-list a:hover {
+  text-decoration: underline;
+}
+.portal-link {
+  font-size: 0.8rem;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  color: var(--blue);
+}
+
+/* 5. Hero: a imagem permanece proporcional graças ao viewBox do SVG. */
+.hero {
+  padding-block: 56px 60px;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 54px;
+}
+.hero-copy .eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 26px;
+}
+.status-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--green);
+  flex-shrink: 0;
+}
+h1 {
+  font-size: clamp(3rem, 5.3vw, 4.6rem);
+  line-height: 1.04;
+}
+h1 em {
+  font-weight: 400;
+  color: var(--green);
+}
+.hero-description {
+  margin-top: 26px;
+  color: var(--muted);
+  max-width: 440px;
+}
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+.hero-note {
+  margin-top: 25px;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+.hero-note span {
+  color: var(--green);
+  margin-right: 7px;
+}
+.hero-visual img {
+  width: 100%;
+  border-radius: 7px;
+}
+.hero-visual figcaption {
+  margin-top: 14px;
+  font-size: 0.71rem;
+  color: var(--muted);
+}
+.caption-number {
+  color: var(--green);
+  font-weight: 700;
+  margin-right: 10px;
+}
+
+/* 6. Sobre a biblioteca: três colunas e quatro destaques no desktop. */
+.about {
+  background: var(--white);
+  border-block: 1px solid var(--line);
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  align-items: center;
+  gap: 30px;
+}
+.about-grid h3 {
+  margin-bottom: 18px;
+}
+.about-grid p {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.about-grid .text-link {
+  margin-top: 17px;
+}
+.about-illustration {
+  border-radius: 5px;
+  width: 100%;
+}
+.benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 28px;
+  border-top: 1px solid var(--line);
+  padding-top: 32px;
+  margin-top: 44px;
+}
+.benefit-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: #e8f5ef;
+  color: var(--green);
+  border-radius: 50%;
+  font-size: 0.68rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+.benefit h3 {
+  font-size: 0.91rem;
+  margin-bottom: 8px;
+}
+.benefit p {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+/* 7. Banner intermediário. */
+.reading-banner {
+  background: var(--navy);
+  color: var(--white);
+}
+.banner-inner {
+  min-height: 278px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr auto;
+  align-items: center;
+  gap: 24px;
+}
+.reading-banner .eyebrow {
+  color: var(--mint);
+  margin-bottom: 18px;
+}
+.reading-banner h2 {
+  font-size: clamp(2rem, 3vw, 2.55rem);
+}
+.banner-inner img {
+  width: 100%;
+}
+
+/* 8. Catálogo: os filtros usam apenas o estado checked dos radios HTML. */
+.catalog-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 40px;
+}
+.catalog-heading > p {
+  max-width: 340px;
+  font-size: 0.87rem;
+  color: var(--muted);
+}
+.catalog-heading a {
+  color: var(--blue);
+}
+.catalog-controls {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+.filter-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 8px 18px;
+  margin: 0 7px 12px 0;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: var(--white);
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.filter-label:hover {
+  border-color: var(--green);
+}
+.filter-input:checked + .filter-label {
+  background: var(--navy);
+  color: var(--white);
+  border-color: var(--navy);
+}
+.filter-input:focus-visible + .filter-label {
+  outline: 3px solid var(--green);
+  outline-offset: 4px;
+}
+.books-grid {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 26px;
+}
+#cat-literatura:checked ~ .books-grid .book-card:not([data-category="literatura"]),
+#cat-tecnologia:checked ~ .books-grid .book-card:not([data-category="tecnologia"]),
+#cat-ciencias:checked ~ .books-grid .book-card:not([data-category="ciencias"]),
+#cat-gestao:checked ~ .books-grid .book-card:not([data-category="gestao"]) {
+  display: none;
+}
+.book-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.book-art {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 238px;
+  padding: 22px;
+}
+.book-art img {
+  width: 141px;
+  height: 182px;
+  filter: drop-shadow(6px 8px 7px #062d4422);
+}
+.art-sand {
+  background: #f0e7d7;
+}
+.art-mint {
+  background: #dbeee5;
+}
+.art-sky {
+  background: #dce8ef;
+}
+.art-lilac {
+  background: #e8e5ef;
+}
+.art-rose {
+  background: #f2e3de;
+}
+.art-olive {
+  background: #e4ebdb;
+}
+.book-content {
+  padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.book-category {
+  color: var(--green);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  margin-bottom: 10px;
+}
+.book-content h3 {
+  font-family: var(--serif);
+  font-size: 1.45rem;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+}
+.book-author {
+  font-size: 0.77rem;
+  color: var(--muted);
+  margin-top: 5px;
+}
+.book-content > p:last-of-type {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+.book-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 44px;
+  border-top: 1px solid var(--line);
+  margin-top: auto;
+  padding-top: 9px;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+.book-link:hover {
+  text-decoration: underline;
+}
+
+/* 9. Unidades e contatos. */
+.units {
+  background: var(--white);
+  border-top: 1px solid var(--line);
+}
+.unit-row {
+  display: grid;
+  grid-template-columns: 0.75fr 1.25fr;
+  gap: 60px;
+  align-items: center;
+  padding-block: 30px;
+  border-top: 1px solid var(--line);
+}
+.unit-row img {
+  width: 100%;
+  border-radius: 5px;
+}
+.unit-copy .eyebrow {
+  margin-bottom: 10px;
+}
+.unit-copy h3 {
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  margin-bottom: 16px;
+}
+.unit-copy > p:not(.eyebrow) {
+  font-size: 0.9rem;
+  color: var(--muted);
+  max-width: 550px;
+}
+.unit-copy .text-link {
+  margin-top: 13px;
+}
+.contact {
+  background: var(--navy);
+  color: var(--white);
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+}
+.contact .eyebrow {
+  color: var(--mint);
+  margin-bottom: 16px;
+}
+.contact-grid > div:first-child > p:last-child {
+  color: #d1e0e6;
+  max-width: 410px;
+  margin-top: 20px;
+  font-size: 0.9rem;
+}
+.contact address {
+  font-style: normal;
+}
+.contact-label {
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  color: var(--mint);
+  margin-top: 20px;
+}
+.contact-label:first-child {
+  margin-top: 0;
+}
+.contact address > a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 44px;
+  font-size: 0.92rem;
+  overflow-wrap: anywhere;
+}
+.contact a:hover {
+  color: var(--mint);
+}
+.contact address > p:last-child {
+  font-size: 0.83rem;
+  color: #d1e0e6;
+  margin-top: 20px;
+}
+.contact-details > .button {
+  margin-top: 24px;
+  color: var(--navy);
+}
+.site-footer {
+  padding-block: 30px;
+  background: #edf2ef;
+}
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 35px;
+}
+.footer-inner strong {
+  font-size: 0.88rem;
+}
+.footer-inner p {
+  font-size: 0.72rem;
+  color: var(--muted);
+  margin-top: 7px;
+}
+.footer-inner .footer-disclaimer {
+  font-size: 0.68rem;
+  max-width: 650px;
+}
+.footer-inner > a {
+  flex-shrink: 0;
+}
+
+/* 10. Tablets: duas colunas no catálogo e no bloco de destaques. */
+@media (max-width: 960px) {
+  .header-inner {
+    gap: 20px;
+  }
+  .portal-link {
+    display: none;
+  }
+  .hero-grid {
+    gap: 24px;
+  }
+  .hero-actions {
+    gap: 10px;
+  }
+  .hero-copy .eyebrow {
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+  }
+  .about-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .about-illustration {
+    grid-row: span 2;
+    grid-column: 2;
+  }
+  .about-grid > div:last-child {
+    grid-column: 1;
+  }
+  .benefit-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .banner-inner {
+    grid-template-columns: 1fr 0.75fr;
+    padding-block: 35px;
+  }
+  .banner-inner .button {
+    justify-self: start;
+    grid-column: 1;
+  }
+  .banner-inner img {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+  }
+  .books-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .unit-row {
+    gap: 30px;
+  }
+  .contact-grid {
+    gap: 40px;
+  }
+}
+
+/* 11. Smartphones: conteúdo em uma coluna, com menu sempre visível. */
+@media (max-width: 640px) {
+  .container {
+    width: calc(100% - 40px);
+  }
+  .section-space {
+    padding-block: 56px;
+  }
+  .header-inner {
+    padding-block: 20px 10px;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .brand strong {
+    font-size: 1.4rem;
+  }
+  .nav-list {
+    gap: 21px;
+  }
+  .nav-list a {
+    font-size: 0.77rem;
+  }
+  .hero {
+    padding-block: 36px 42px;
+  }
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .hero-copy .eyebrow {
+    font-size: 0.59rem;
+    margin-bottom: 21px;
+  }
+  h1 {
+    font-size: clamp(2.8rem, 12vw, 4rem);
+  }
+  .hero-description {
+    font-size: 0.92rem;
+    margin-top: 20px;
+  }
+  .hero-actions {
+    gap: 10px 16px;
+    margin-top: 22px;
+  }
+  .hero-actions .text-link {
+    font-size: 0.78rem;
+  }
+  .hero-note {
+    font-size: 0.68rem;
+    margin-top: 18px;
+  }
+  .hero-visual figcaption {
+    font-size: 0.64rem;
+  }
+  .section-heading {
+    margin-bottom: 28px;
+  }
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .about-illustration {
+    grid-column: auto;
+    grid-row: auto;
+  }
+  .about-grid > div:last-child {
+    grid-column: auto;
+  }
+  .benefit-grid {
+    gap: 25px 18px;
+    margin-top: 30px;
+  }
+  .banner-inner {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding-block: 40px;
+  }
+  .banner-inner img {
+    grid-column: 1;
+    grid-row: auto;
+    width: 220px;
+    justify-self: center;
+  }
+  .banner-inner .button {
+    grid-column: 1;
+  }
+  .catalog-heading {
+    display: block;
+  }
+  .catalog-heading > p {
+    margin-top: 20px;
+  }
+  .filter-label {
+    font-size: 0.73rem;
+    padding-inline: 14px;
+    margin-right: 3px;
+  }
+  .books-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .book-art {
+    height: 220px;
+  }
+  .book-content {
+    padding: 20px 22px;
+  }
+  .unit-row {
+    grid-template-columns: 1fr;
+    gap: 23px;
+    padding-block: 28px;
+  }
+  .unit-copy h3 {
+    font-size: 1.8rem;
+  }
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .contact address > a {
+    font-size: 0.82rem;
+  }
+  .footer-inner {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+/* 12. Preferência por menos movimento e impressão em papel. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    transition: none !important;
+  }
+}
+@media print {
+  .skip-link, .hero-actions, .filter-label, .portal-link {
+    display: none;
+  }
+  .container {
+    width: 100%;
+  }
+  .section-space {
+    padding-block: 25px;
+  }
+  .books-grid .book-card {
+    display: flex !important;
+    break-inside: avoid;
+  }
+  .book-art {
+    height: 150px;
+  }
+  .book-art img {
+    height: 130px;
+    width: auto;
+  }
+  .contact, .reading-banner {
+    background: white;
+    color: var(--navy);
+  }
+  .contact p, .contact .eyebrow, .reading-banner .eyebrow {
+    color: var(--ink) !important;
+  }
+}

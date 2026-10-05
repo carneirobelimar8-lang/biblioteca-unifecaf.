@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Projeto acadêmico da Biblioteca Digital UniFECAF. Explore leituras abertas, conheça os serviços e encontre apoio para estudar.">
+    <meta name="author" content="Luiza Kelly dos Santos">
+    <meta name="theme-color" content="#062D44">
+    <title>Biblioteca Digital UniFECAF | Luiza Kelly dos Santos</title>
+    <link rel="icon" type="image/svg+xml" href="assets/imagens/favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <!-- Primeiro link da página: permite pular a navegação pelo teclado. -->
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+    <!-- As quatro âncoras mantêm a navegação definida no protótipo. -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#inicio" aria-label="Biblioteca Digital UniFECAF, início">
+          <img src="assets/imagens/favicon.svg" alt="" width="38" height="38">
+          <span>
+            <strong>UniFECAF</strong>
+            <span class="brand-caption">BIBLIOTECA DIGITAL</span>
+          </span>
+        </a>
+        <nav aria-label="Navegação principal">
+          <ul class="nav-list">
+            <li>
+              <a href="#biblioteca">Biblioteca</a>
+            </li>
+            <li>
+              <a href="#livros">Livros</a>
+            </li>
+            <li>
+              <a href="#unidades">Unidades</a>
+            </li>
+            <li>
+              <a href="#contatos">Contatos</a>
+            </li>
+          </ul>
+        </nav>
+        <a class="portal-link" href="https://www.unifecaf.com.br/biblioteca">Portal oficial <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </header>
+    <main id="conteudo">
+      <!-- Banner principal do protótipo, com texto real em vez de texto na imagem. -->
+      <section class="hero" id="inicio" aria-labelledby="titulo-principal">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">
+              <span class="status-dot" aria-hidden="true"></span> CONHECIMENTO QUE ACOMPANHA VOCÊ</p>
+            <h1 id="titulo-principal">Sua próxima<br>descoberta<br>
+              <em>começa aqui.</em>
+            </h1>
+            <p class="hero-description">Um espaço para ler, pesquisar e ir além. Encontre materiais para os seus estudos e caminhos para novas ideias.</p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#livros">Explorar as leituras <span aria-hidden="true">→</span>
+              </a>
+              <a class="text-link" href="#biblioteca">Conheça a biblioteca</a>
+            </div>
+            <p class="hero-note">
+              <span aria-hidden="true">✓</span> Leituras abertas e apoio à vida acadêmica</p>
+          </div>
+          <figure class="hero-visual">
+            <img src="assets/imagens/biblioteca.svg" alt="Ilustração de um espaço de estudo com estante, livros, luminária e uma planta" width="660" height="640" fetchpriority="high">
+            <figcaption>
+              <span class="caption-number">01 /</span> Todo grande caminho começa com uma leitura.</figcaption>
+          </figure>
+        </div>
+      </section>
+      <!-- Sobre a biblioteca: dois textos, imagem central e quatro destaques. -->
+      <section class="about section-space" id="biblioteca" aria-labelledby="titulo-biblioteca">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">SOBRE A NOSSA BIBLIOTECA</p>
+            <h2 id="titulo-biblioteca">Mais perto do que<br>você quer aprender.</h2>
+          </div>
+          <div class="about-grid">
+            <div>
+              <h3>Seu ponto de partida</h3>
+              <p>A biblioteca conecta a comunidade acadêmica a fontes de estudo, pesquisa e leitura. Nesta interface, os materiais estão organizados para facilitar a descoberta de conteúdos.</p>
+              <p>Comece pelos destaques e escolha a área que combina com o seu momento de aprendizagem.</p>
+            </div>
+            <img class="about-illustration" src="assets/imagens/leitura.svg" alt="Ilustração de um livro aberto com folhas azuis e verdes" width="440" height="330" loading="lazy">
+            <div>
+              <h3>Do digital ao presencial</h3>
+              <p>Para consultar o acervo institucional e as orientações de acesso, visite a página oficial da biblioteca. As bibliotecas virtuais da instituição são acessadas pela plataforma One.</p>
+              <a class="text-link" href="https://www.unifecaf.com.br/biblioteca">Ver orientações de acesso <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+          <div class="benefit-grid">
+            <article class="benefit">
+              <span class="benefit-icon" aria-hidden="true">01</span>
+              <h3>Leituras abertas</h3>
+              <p>Conheça recursos externos que podem ampliar seus estudos.</p>
+            </article>
+            <article class="benefit">
+              <span class="benefit-icon" aria-hidden="true">02</span>
+              <h3>Áreas do conhecimento</h3>
+              <p>Explore literatura, tecnologia, ciências e gestão.</p>
+            </article>
+            <article class="benefit">
+              <span class="benefit-icon" aria-hidden="true">03</span>
+              <h3>Pesquisa acadêmica</h3>
+              <p>Encontre os caminhos para as fontes e serviços oficiais.</p>
+            </article>
+            <article class="benefit">
+              <span class="benefit-icon" aria-hidden="true">04</span>
+              <h3>Apoio para estudar</h3>
+              <p>Saiba onde buscar orientação para continuar sua leitura.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <!-- Segundo banner do protótipo. -->
+      <section class="reading-banner" aria-labelledby="titulo-destaque">
+        <div class="container banner-inner">
+          <div>
+            <p class="eyebrow">ABRA ESPAÇO PARA NOVAS IDEIAS</p>
+            <h2 id="titulo-destaque">Entre um capítulo e outro,<br>o mundo fica maior.</h2>
+          </div>
+          <img src="assets/imagens/livros-banner.svg" alt="" width="450" height="270" loading="lazy">
+          <a class="button button-light" href="#livros">Encontre uma leitura <span aria-hidden="true">↓</span>
+          </a>
+        </div>
+      </section>
+      <!-- Catálogo de seis materiais. Radios nativos + seletores CSS fazem a filtragem. -->
+      <section class="catalog section-space" id="livros" aria-labelledby="titulo-livros">
+        <div class="container">
+          <div class="section-heading catalog-heading">
+            <div>
+              <p class="eyebrow">NOSSOS LIVROS</p>
+              <h2 id="titulo-livros">Uma leitura para<br>cada curiosidade.</h2>
+            </div>
+            <p>Seleção demonstrativa de materiais abertos externos. O acervo institucional está no <a href="https://www.unifecaf.com.br/biblioteca">portal oficial da biblioteca</a>.</p>
+          </div>
+          <fieldset class="catalog-controls">
+            <legend class="visually-hidden">Filtrar materiais por categoria</legend>
+            <input class="filter-input" type="radio" name="categoria" id="cat-todos" checked>
+            <label class="filter-label" for="cat-todos">Todos</label>
+            <input class="filter-input" type="radio" name="categoria" id="cat-literatura">
+            <label class="filter-label" for="cat-literatura">Literatura</label>
+            <input class="filter-input" type="radio" name="categoria" id="cat-tecnologia">
+            <label class="filter-label" for="cat-tecnologia">Tecnologia</label>
+            <input class="filter-input" type="radio" name="categoria" id="cat-ciencias">
+            <label class="filter-label" for="cat-ciencias">Ciências</label>
+            <input class="filter-input" type="radio" name="categoria" id="cat-gestao">
+            <label class="filter-label" for="cat-gestao">Gestão</label>
+            <div class="books-grid">
+              <article class="book-card" data-category="literatura">
+                <div class="book-art art-sand">
+                  <img src="assets/imagens/dom-casmurro.svg" alt="Capa ilustrativa de Dom Casmurro" width="240" height="310" loading="lazy">
+                </div>
+                <div class="book-content">
+                  <p class="book-category">LITERATURA · PORTUGUÊS</p>
+                  <h3>Dom Casmurro</h3>
+                  <p class="book-author">Machado de Assis</p>
+                  <p>Memórias, relações e ambiguidades em um clássico da literatura brasileira.</p>
+                  <a class="book-link" href="https://bd.camara.leg.br/bd/items/7c25d167-f9a8-4413-b948-276b84dcf53d">Saiba mais <span class="visually-hidden">sobre Dom Casmurro na Biblioteca da Câmara</span>
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </article>
+              <article class="book-card" data-category="tecnologia">
+                <div class="book-art art-mint">
+                  <img src="assets/imagens/html-css.svg" alt="Capa ilustrativa do guia de desenvolvimento web" width="240" height="310" loading="lazy">
+                </div>
+                <div class="book-content">
+                  <p class="book-category">TECNOLOGIA · GUIA DIGITAL</p>
+                  <h3>Desenvolvimento web</h3>
+                  <p class="book-author">MDN Web Docs</p>
+                  <p>Um percurso de aprendizagem sobre estrutura, estilos e funcionamento da web.</p>
+                  <a class="book-link" href="https://developer.mozilla.org/pt-BR/docs/Learn_web_development">Saiba mais <span class="visually-hidden">sobre desenvolvimento web na MDN</span>
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </article>
+              <article class="book-card" data-category="gestao">
+                <div class="book-art art-sky">
+                  <img src="assets/imagens/gestao.svg" alt="Capa ilustrativa de Principles of Management" width="240" height="310" loading="lazy">
+                </div>
+                <div class="book-content">
+                  <p class="book-category">GESTÃO · E-BOOK EM INGLÊS</p>
+                  <h3 lang="en">Principles of Management</h3>
+                  <p class="book-author">OpenStax</p>
+                  <p>Fundamentos para compreender organizações, liderança e tomada de decisão.</p>
+                  <a class="book-link" href="https://openstax.org/details/books/principles-management">Saiba mais <span class="visually-hidden">sobre Principles of Management na OpenStax</span>
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </article>
+              <article class="book-card" data-category="ciencias">
+                <div class="book-art art-lilac">
+                  <img src="assets/imagens/fisica.svg" alt="Capa ilustrativa de College Physics 2e" width="240" height="310" loading="lazy">
+                </div>
+                <div class="book-content">
+                  <p class="book-category">CIÊNCIAS · E-BOOK EM INGLÊS</p>
+                  <h3 lang="en">College Physics 2e</h3>
+                  <p class="book-author">OpenStax</p>
+                  <p>Conceitos de física e relações entre os fenômenos e o cotidiano.</p>
+                  <a class="book-link" href="https://openstax.org/details/books/college-physics-2e">Saiba mais <span class="visually-hidden">sobre College Physics 2e na OpenStax</span>
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </article>
+              <article class="book-card" data-category="ciencias">
+                <div class="book-art art-rose">
+                  <img src="assets/imagens/sociologia.svg" alt="Capa ilustrativa de Introduction to Sociology 3e" width="240" height="310" loading="lazy">
+                </div>
+                <div class="book-content">
+                  <p class="book-category">CIÊNCIAS · E-BOOK EM INGLÊS</p>
+                  <h3 lang="en">Introduction to Sociology 3e</h3>
+                  <p class="book-author">OpenStax</p>
+                  <p>Uma introdução ao estudo da vida em sociedade, da cultura e das instituições.</p>
+                  <a class="book-link" href="https://openstax.org/details/books/introduction-sociology-3e">Saiba mais <span class="visually-hidden">sobre Introduction to Sociology 3e na OpenStax</span>
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </article>
+              <article class="book-card" data-category="ciencias">
+                <div class="book-art art-olive">
+                  <img src="assets/imagens/biologia.svg" alt="Capa ilustrativa de Biology 2e" width="240" height="310" loading="lazy">
+                </div>
+                <div class="book-content">
+                  <p class="book-category">CIÊNCIAS · E-BOOK EM INGLÊS</p>
+                  <h3 lang="en">Biology 2e</h3>
+                  <p class="book-author">OpenStax</p>
+                  <p>Dos processos celulares à diversidade de seres vivos e suas relações.</p>
+                  <a class="book-link" href="https://openstax.org/details/books/biology-2e">Saiba mais <span class="visually-hidden">sobre Biology 2e na OpenStax</span>
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </article>
+            </div>
+          </fieldset>
+        </div>
+      </section>
+      <!-- Três blocos de unidades, com imagem à esquerda e texto à direita. -->
+      <section class="units section-space" id="unidades" aria-labelledby="titulo-unidades">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">AS UNIDADES</p>
+            <h2 id="titulo-unidades">Diferentes espaços.<br>O mesmo desejo de aprender.</h2>
+            <p>Conheça os caminhos de apoio presencial e digital da instituição.</p>
+          </div>
+          <div class="unit-list">
+            <article class="unit-row">
+              <img src="assets/imagens/campus.svg" alt="Ilustração de um prédio de ensino" width="440" height="280" loading="lazy">
+              <div class="unit-copy">
+                <p class="eyebrow">01 / CAMPUS</p>
+                <h3>Taboão da Serra</h3>
+                <p>O campus-sede fica na Av. Vida Nova, 166, Jardim Maria Rosa, em Taboão da Serra, São Paulo. Consulte os canais oficiais para informações sobre atendimento e serviços presenciais.</p>
+                <a class="text-link" href="https://www.unifecaf.com.br/graduacao-presencial">Conheça o campus <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </article>
+            <article class="unit-row">
+              <img src="assets/imagens/polos.svg" alt="Ilustração de pontos conectados que representam polos de apoio" width="440" height="280" loading="lazy">
+              <div class="unit-copy">
+                <p class="eyebrow">02 / POLOS DE APOIO</p>
+                <h3>Apoio mais perto de você</h3>
+                <p>Os polos conectam estudantes aos serviços de apoio da instituição. Use a página oficial para localizar o polo da sua região e consultar suas informações.</p>
+                <a class="text-link" href="https://www.unifecaf.com.br/polos">Encontre um polo <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </article>
+            <article class="unit-row">
+              <img src="assets/imagens/digital.svg" alt="Ilustração de um computador com livros digitais" width="440" height="280" loading="lazy">
+              <div class="unit-copy">
+                <p class="eyebrow">03 / AMBIENTE DIGITAL</p>
+                <h3>Sua biblioteca na tela</h3>
+                <p>O ambiente digital complementa os espaços presenciais. A página oficial explica o acesso às bibliotecas virtuais e os procedimentos de consulta e renovação.</p>
+                <a class="text-link" href="https://www.unifecaf.com.br/biblioteca">Acesse as orientações <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <!-- Contatos reais encaminham o visitante aos canais oficiais. -->
+      <section class="contact section-space" id="contatos" aria-labelledby="titulo-contatos">
+        <div class="container contact-grid">
+          <div>
+            <p class="eyebrow">CONTATOS</p>
+            <h2 id="titulo-contatos">Precisa de um<br>próximo passo?</h2>
+            <p>Para dúvidas sobre acesso e serviços, procure a equipe da biblioteca ou os canais institucionais.</p>
+          </div>
+          <div class="contact-details">
+            <address>
+              <p class="contact-label">EQUIPE DA BIBLIOTECA</p>
+              <a href="mailto:atendimento.biblioteca@fecaf.com.br">atendimento.biblioteca@fecaf.com.br <span aria-hidden="true">↗</span>
+              </a>
+              <p class="contact-label">CONTATO INSTITUCIONAL</p>
+              <a href="tel:+551142104950">(11) 4210-4950 <span aria-hidden="true">↗</span>
+              </a>
+              <p>Av. Vida Nova, 166 · Jardim Maria Rosa<br>Taboão da Serra · SP · CEP 06764-045</p>
+            </address>
+            <a class="button button-light" href="https://www.unifecaf.com.br/fale-conosco">Ir para o atendimento oficial <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>
+          <strong>Biblioteca Digital UniFECAF</strong>
+          <p>Projeto acadêmico de Design Web · Luiza Kelly dos Santos · 2026</p>
+          <p class="footer-disclaimer">Interface demonstrativa. Os serviços institucionais são prestados pelos canais oficiais da UniFECAF.</p>
+        </div>
+        <a class="text-link" href="#inicio">Voltar ao início <span aria-hidden="true">↑</span>
+        </a>
+      </div>
+    </footer>
+  </body>
+</html>
